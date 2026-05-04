@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Controle de Documentos</title>
+  <link rel="stylesheet" href="styles.css">
+<script type="text/javascript" src="https://gc.kes.v2.scr.kaspersky-labs.com/7EA5E9BB-55E1-4C31-9C21-4943DDFED2E4/main.js?attr=RRkLV4nnQf9uHjNyz9_Ef_6rHFETCca75URvU4I19ZajnxjT-UjS7XE0-g0P-E0zryRCiVu1SV85uQ9mC8RpcV62RTsdPKODlXp84X5c1c23fx9QjpeFTJPpelQYnS0vGOCSXS6ONKgIr4FCf72m28-diev_IZjK3PVRv3CNkgj7D2krCH7AZlWmCO-RZi5xYW9NVATjq4CC31bRX7QtNcEtIyg0hb2QtOsmjnqdPTzE_EXpz-m450iMqIIkkNnYv0K0O5NlAlnb2guKUgZ7amSRHip9TjcBG7EmaG5fu-qJfwTkUSFwBtivz6MnBp-mIjH2TGu5FQvafN1vCkMjOgJIBr9mBfXQu9cnl3tkfzzFjjtCc6Y5IiGrMKLE0DRXY20EQFSikk-X6DQ5LFg0DUNXIfr4fVjjkwVSS-d58rz1sgHw7PIkXFM6xY9qHEmhanGdkbF0xX0FF2mQFuG6GdWbCsYVwC5XpOS-BzJiAxUNHTXXLN72WkxADNnlDV8cX2zKewhu9D-C8ohfjOPwxqZBYWY3Wm_YORmfxis2wTvIFbcKniEQ5gYKGV32h2n0HYNOI_-undLknfjCtcLrskSWbj8G-SUbgxqp4E1revylKEutxYiRiDNxLKob3-PqfocryIxx4FihkudEgBykxZBZtSld0fuyL2JSNrzSvMx70cfcd4v61NhhIvrYlr8hpklKUhaampuaZpb4luZ2egQHB5fTsvxTbGcL8qgOFcLx3ga_l4AVHKP2P6X122C8aeECuo8cGc2qPxOokT8L-zkFGHzfQZ5I5u1Hv0AgHkm57RTbNcYxRVk5MZWUXz_ijpZXRsVNBUmUaATBTpWO-M9MAIg7D_VoWuRTf95aLf0i8co55R3k0MnSd0nl_4uTg0LJHWoJbJ2oqeso0CUM-vV7bPJeJuIIjwYQt6Fp2Kie8zAs6Qg5H3_-l9CxkBSG-dVaJ93E9unQxNj2l9KChJn4xuXlJX9bgmlhAzwwkD4QUXZEy8Z613PQ7miYR3tucGqw-elV_CddYCNkdkCWoX-3YLWwehiV8G5NqYZKFBtvNyZ7w9vuW3_6XU9YqnHT" charset="UTF-8"></script></head>
+<body>
+
+  <div class="top-bg"></div>
+     <div class="container">
+     
+  <h1>📁 Controle de Documentos</h1>
+
+  <!-- ID -->
+  <input id="id" placeholder="Nº do documento">
+
+  <!-- TIPO (AGORA SELECT) -->
+  <select id="tipo">
+    <option value="">Selecione o tipo</option>
+
+    <option>Abertura de matrícula</option>
+    <option>Averbação</option>
+    <option>Exame de cálculo</option>
+    <option>Escritura</option>
+    <option>Notificação</option>
+    <option>Processo devolvido (Termo de Devolução)</option>
+    <option>Processo para devolver</option>
+    <option>Registro</option>
+    <option>Registro de cédula</option>
+    <option>Retificação Administrativa</option>
+    <option>Restauração de matrícula</option>
+    <option>Outros</option>
+
+  </select>
+
+  <!-- DESCRIÇÃO -->
+  <input id="descricao" placeholder="Descrição">
+
+  <!-- LOCALIZAÇÃO -->
+  <select id="local">
+    <option value="">Localização</option>
+    <option>Arquivo</option>
+    <option>Gaveta</option>
+    <option>Adelar</option>
+    <option>Ana</option>
+    <option>Benizania</option>
+    <option>Rafaela</option>
+    <option>Rafael</option>
+    <option>Rayanny</option>
+    <option>Wanderson</option>
+  </select>
+
+  <!-- BOTÃO -->
+  <button onclick="registrar()">Registrar</button>
+  
+  <h2>📜 Lista</h2>
+
+  <div style="margin-bottom: 10px;">
+    <input id="busca" placeholder="🔍 Buscar por ID..." oninput="filtrarLista()">
+  </div>
+
+  <ul id="lista"></ul>
+</div>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
