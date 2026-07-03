@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Controle de Documentos</title>
+
+  <!-- FONTE -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<div id="modalEditar" class="modal">
+  <div class="modal-conteudo">
+
+    <h2>Editar Documento</h2>
+
+    <label>ID</label>
+    <input id="editId">
+
+    <label>Tipo</label>
+    <select id="editTipo">
+      <option>Abertura de matrícula</option>
+      <option>Averbação</option>
+      <option>Exame de cálculo</option>
+      <option>Escritura</option>
+      <option>Notificação</option>
+      <option>Processo devolvido (Termo de Devolução)</option>
+      <option>Processo para devolver</option>
+      <option>Registro</option>
+      <option>Registro de cédula</option>
+      <option>Retificação Administrativa</option>
+      <option>Restauração de matrícula</option>
+      <option>Outros</option>
+    </select>
+
+    <label>Descrição</label>
+    <input id="editDescricao">
+
+    <label>Local</label>
+    <select id="editLocal">
+      <option>Arquivo</option>
+      <option>Gaveta</option>
+      <option>Adelar</option>
+      <option>Ana</option>
+      <option>Benizania</option>
+      <option>Leonaldo</option>
+      <option>Luzineide</option>
+      <option>Rafaela</option>
+      <option>Rafael</option>
+      <option>Wanderson</option>
+    </select>
+
+    <div class="modal-botoes">
+      <button onclick="fecharModal()">Cancelar</button>
+      <button onclick="salvarEdicao()">Salvar</button>
+    </div>
+
+  </div>
+</div>
+
+<body>
+
+  <!-- LOGO TOPO -->
+  <div class="top-bg"></div>
+
+  <!-- CONTAINER -->
+  <div class="container">
+
+    <div class="header">
+      <h1>📁 Controle de Documentos</h1>
+      <p>Sistema interno de gerenciamento documental</p>
+    </div>
+
+    <!-- FORM -->
+    <div class="form-grid">
+
+      <!-- ID -->
+      <input id="id" placeholder="Nº do documento">
+
+      <!-- TIPO -->
+      <select id="tipo">
+        <option value="">Selecione o tipo</option>
+
+        <option>Abertura de matrícula</option>
+        <option>Averbação</option>
+        <option>Exame de cálculo</option>
+        <option>Escritura</option>
+        <option>Notificação</option>
+        <option>Processo devolvido (Termo de Devolução)</option>
+        <option>Processo para devolver</option>
+        <option>Registro</option>
+        <option>Registro de cédula</option>
+        <option>Retificação Administrativa</option>
+        <option>Restauração de matrícula</option>
+        <option>Outros</option>
+      </select>
+
+      <!-- DESCRIÇÃO -->
+      <input id="descricao" placeholder="Descrição">
+
+      <!-- LOCAL -->
+      <select id="local">
+        <option value="">Localização</option>
+
+          <option>Arquivo</option>
+          <option>Gaveta</option>
+          <option>Adelar</option>
+          <option>Ana</option>
+          <option>Benizania</option>
+          <option>Leonaldo</option>
+          <option>Luzineide</option>
+          <option>Rafaela</option>
+          <option>Rafael</option>
+          <option>Wanderson</option>
+      </select>
+
+      <!-- BOTÃO -->
+      <button onclick="registrar()" class="btn-registrar">
+        Registrar
+      </button>
+
+    </div>
+
+    <!-- LISTA -->
+    <div class="lista-header">
+      <h2>📜 Lista</h2>
+    </div>
+
+    <!-- BUSCA -->
+    <div class="filtros-container">
+
+      <input
+        id="busca"
+        placeholder="🔍 Buscar por ID..."
+        oninput="filtrarLista()"
+      >
+
+      <!-- FILTRO TIPO -->
+      <select id="filtroCat" onchange="filtrarLista()">
+        <option value="">Todos os tipos</option>
+
+        <option>Abertura de matrícula</option>
+        <option>Averbação</option>
+        <option>Exame de cálculo</option>
+        <option>Escritura</option>
+        <option>Notificação</option>
+        <option>Processo devolvido (Termo de Devolução)</option>
+        <option>Processo para devolver</option>
+        <option>Registro</option>
+        <option>Registro de cédula</option>
+        <option>Retificação Administrativa</option>
+        <option>Restauração de matrícula</option>
+        <option>Outros</option>
+      </select>
+
+      <!-- FILTRO LOCAL -->
+      <select id="filtroLocal" onchange="filtrarLista()">
+        <option value="">Todas localizações</option>
+
+          <option>Arquivo</option>
+          <option>Gaveta</option>
+          <option>Adelar</option>
+          <option>Ana</option>
+          <option>Benizania</option>
+          <option>Leonaldo</option>
+          <option>Luzineide</option>
+          <option>Rafaela</option>
+          <option>Rafael</option>
+          <option>Wanderson</option>
+      </select>
+
+    </div>
+
+    <!-- LISTA -->
+    <ul id="lista"></ul>
+
+    <div id="paginacao"></div>
+    
+  </div>
+
+  <script type="module" src="./main.js"></script>
+
+</body>
+</html>
