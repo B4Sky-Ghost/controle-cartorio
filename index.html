@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
 
@@ -106,16 +107,16 @@
       <select id="local">
         <option value="">Localização</option>
 
-          <option>Arquivo</option>
-          <option>Gaveta</option>
-          <option>Adelar</option>
-          <option>Ana</option>
-          <option>Benizania</option>
-          <option>Leonaldo</option>
-          <option>Luzineide</option>
-          <option>Rafaela</option>
-          <option>Rafael</option>
-          <option>Wanderson</option>
+        <option>Arquivo</option>
+        <option>Gaveta</option>
+        <option>Adelar</option>
+        <option>Ana</option>
+        <option>Benizania</option>
+        <option>Leonaldo</option>
+        <option>Luzineide</option>
+        <option>Rafaela</option>
+        <option>Rafael</option>
+        <option>Wanderson</option>
       </select>
 
       <!-- BOTÃO -->
@@ -133,11 +134,7 @@
     <!-- BUSCA -->
     <div class="filtros-container">
 
-      <input
-        id="busca"
-        placeholder="🔍 Buscar por ID..."
-        oninput="filtrarLista()"
-      >
+      <input id="busca" placeholder="🔍 Buscar por ID..." oninput="filtrarLista()">
 
       <!-- FILTRO TIPO -->
       <select id="filtroCat" onchange="filtrarLista()">
@@ -161,16 +158,16 @@
       <select id="filtroLocal" onchange="filtrarLista()">
         <option value="">Todas localizações</option>
 
-          <option>Arquivo</option>
-          <option>Gaveta</option>
-          <option>Adelar</option>
-          <option>Ana</option>
-          <option>Benizania</option>
-          <option>Leonaldo</option>
-          <option>Luzineide</option>
-          <option>Rafaela</option>
-          <option>Rafael</option>
-          <option>Wanderson</option>
+        <option>Arquivo</option>
+        <option>Gaveta</option>
+        <option>Adelar</option>
+        <option>Ana</option>
+        <option>Benizania</option>
+        <option>Leonaldo</option>
+        <option>Luzineide</option>
+        <option>Rafaela</option>
+        <option>Rafael</option>
+        <option>Wanderson</option>
       </select>
 
     </div>
@@ -179,10 +176,11 @@
     <ul id="lista"></ul>
 
     <div id="paginacao"></div>
-    
+
   </div>
 
-  <script type="module" src="./main.js"></script>
+  <script type="module" src="./js/main.js"></script>
 
 </body>
+
 </html>
