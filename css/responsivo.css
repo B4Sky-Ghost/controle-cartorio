@@ -1,0 +1,136 @@
+/* ======================================================
+   RESPONSIVO
+====================================================== */
+
+@media (max-width:900px) {
+
+    /* ==================================================
+       CONTAINER
+    ================================================== */
+
+    .container {
+
+        padding: 22px;
+
+    }
+
+    .top-bg {
+
+        height: 260px;
+
+    }
+
+    /* ==================================================
+       FORMULÁRIO
+    ================================================== */
+
+    .linha-form {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+    .campo-form {
+
+        width: 100%;
+
+    }
+
+    .campo-form input,
+    .campo-form select {
+
+        width: 100%;
+
+    }
+
+    #tipoId,
+    #numeroId,
+    #grupoAno,
+    #tipo,
+    #local,
+    #descricao,
+    #busca,
+    #filtroCat,
+    #filtroLocal {
+
+        width: 100%;
+
+    }
+
+    .btn-registrar {
+
+        width: 100%;
+
+        height: 46px;
+
+    }
+
+    /* ==================================================
+       FILTROS
+    ================================================== */
+
+    .filtros-container {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+    /* ==================================================
+       CARDS
+    ================================================== */
+
+    .doc-topo {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: var(--esp-14);
+
+    }
+
+    .doc-botoes {
+
+        width: 100%;
+
+        flex-wrap: wrap;
+
+    }
+
+    .doc-botoes button {
+
+        flex: 1;
+
+        min-width: 120px;
+
+    }
+
+    /* ==================================================
+       MODAIS
+    ================================================== */
+
+    .modal-conteudo {
+
+        width: 95%;
+
+        padding: 22px;
+
+    }
+
+    .modal-botoes {
+
+        flex-direction: column-reverse;
+
+    }
+
+    .modal-botoes button {
+
+        width: 100%;
+
+    }
+
+}

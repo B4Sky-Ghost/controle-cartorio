@@ -28,5 +28,8 @@ export function filtrarLista(resetPagina = true) {
         return matchID && matchTipo && matchLocal;
     });
 
+    // Guarda para uso no exportar CSV
+    state.docsFiltrados = filtrados;
+
     renderLista(filtrados);
 }

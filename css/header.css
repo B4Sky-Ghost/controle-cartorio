@@ -1,0 +1,31 @@
+/* ======================================================
+   HEADER
+====================================================== */
+
+.header {
+
+    position: relative;
+
+    margin-bottom: var(--esp-24);
+
+}
+
+.header h1 {
+
+    font-size: var(--fonte-40);
+
+    font-weight: 700;
+
+    margin-bottom: var(--esp-6);
+
+    color: var(--cor-texto);
+
+}
+
+.header p {
+
+    color: var(--cor-terciaria);
+
+    font-size: var(--fonte-15);
+
+}

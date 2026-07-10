@@ -1,0 +1,227 @@
+/* ======================================================
+   MODAIS
+====================================================== */
+
+.modal {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: rgba(0, 0, 0, .6);
+
+    backdrop-filter: blur(3px);
+
+    z-index: 9999;
+
+}
+
+/* ======================================================
+   CONTEÚDO DO MODAL
+====================================================== */
+
+.modal-conteudo {
+
+    width: 580px;
+
+    max-width: 92%;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 22px;
+
+    border-radius: var(--raio-medio);
+
+    background: var(--cor-modal);
+
+    color: #fff;
+
+    box-shadow: var(--sombra-modal);
+
+}
+
+.modal-conteudo h2 {
+
+    margin-bottom: var(--esp-20);
+
+    font-size: 28px;
+
+}
+
+.modal-conteudo label {
+
+    display: block;
+
+    margin-top: 18px;
+
+    margin-bottom: var(--esp-8);
+
+    font-size: var(--fonte-14);
+
+    font-weight: 600;
+
+    color: var(--cor-texto-claro);
+
+}
+
+/* ======================================================
+   CAMPOS DO MODAL
+====================================================== */
+
+.modal-conteudo .campo-form {
+
+    margin-bottom: var(--esp-10);
+
+}
+
+.modal-conteudo input,
+.modal-conteudo select {
+
+    background: var(--cor-input);
+
+    color: var(--cor-texto);
+
+}
+
+/* ======================================================
+   BOTÕES DO MODAL
+====================================================== */
+
+.modal-botoes {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    gap: var(--esp-12);
+
+    margin-top: var(--esp-20);
+
+    padding-top: 18px;
+
+    border-top: 1px solid rgba(255, 255, 255, .12);
+
+}
+
+.modal-botoes button {
+
+    min-width: 120px;
+
+}
+
+/* Botão Cancelar */
+
+.modal-botoes button:first-child {
+
+    background: var(--cor-secundaria);
+
+    color: #fff;
+
+}
+
+.modal-botoes button:first-child:hover {
+
+    background: var(--cor-secundaria-hover);
+
+}
+
+/* Botão Salvar */
+
+.modal-botoes button:last-child {
+
+    background: var(--cor-sucesso);
+
+    color: #fff;
+
+}
+
+.modal-botoes button:last-child:hover {
+
+    background: var(--cor-sucesso-hover);
+
+}
+
+/* ======================================================
+   IDENTIFICADOR DO MODAL
+====================================================== */
+
+.grupo-id {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: var(--esp-10);
+
+    width: 100%;
+
+    margin-bottom: var(--esp-8);
+
+}
+
+.grupo-id .campo-form {
+
+    min-width: 0;
+
+    margin: 0;
+
+}
+
+/* Tipo */
+
+.grupo-id .campo-form:first-child {
+
+    flex: 2;
+
+}
+
+/* Número */
+
+.grupo-id .campo-form:nth-child(2) {
+
+    flex: 1;
+
+}
+
+/* Ano */
+
+#editGrupoAno {
+
+    display: flex;
+
+    flex: 1;
+
+}
+
+#editGrupoAno .campo-form {
+
+    flex: 1;
+
+}
+
+/* Campos do identificador */
+
+.grupo-id input,
+.grupo-id select {
+
+    font-size: var(--fonte-15);
+
+    font-weight: 600;
+
+    padding: 14px;
+
+    background: var(--cor-input);
+
+    border: 2px solid var(--cor-borda);
+
+}

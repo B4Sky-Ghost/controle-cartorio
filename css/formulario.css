@@ -1,0 +1,124 @@
+/* ======================================================
+   BOTÃO REGISTRAR
+====================================================== */
+
+.btn-registrar {
+
+    background: #455a64;
+
+    color: white;
+
+}
+
+.btn-registrar:hover {
+
+    background: #37474f;
+
+}
+
+.btn-registrar--ativo {
+
+    background: #2e7d32;
+
+    cursor: pointer;
+
+}
+
+.btn-registrar--ativo:hover {
+
+    background: #1b5e20;
+
+}
+
+.btn-registrar:disabled {
+
+    opacity: 0.55;
+
+    cursor: not-allowed;
+
+}
+
+/* ======================================================
+   CAMPOS DO IDENTIFICADOR
+====================================================== */
+
+.grupo-id select,
+.grupo-id input {
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    padding: 11px 12;
+
+    background: #fff;
+
+    border: 2px solid #cfd8dc;
+
+}
+
+/* ======================================================
+   MENSAGENS DE ERRO
+====================================================== */
+
+.erro {
+
+    min-height: 18px;
+
+    margin-top: 5px;
+
+    padding-left: 2px;
+
+    color: #c62828;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+/* ======================================================
+   VALIDAÇÃO
+====================================================== */
+
+.campo-valido {
+
+    border: 2px solid #2e7d32 !important;
+
+    background: #f4fff5;
+
+}
+
+.campo-invalido {
+
+    border: 2px solid #c62828 !important;
+
+    background: #fff8f8;
+
+}
+
+/* ======================================================
+   ANIMAÇÃO DOS CAMPOS
+====================================================== */
+
+.campo input,
+.campo select {
+
+    transition:
+
+        border-color .2s,
+
+        box-shadow .2s,
+
+        background .2s,
+
+        transform .15s;
+
+}
+
+.campo input:focus,
+.campo select:focus {
+
+    transform: translateY(-1px);
+
+}

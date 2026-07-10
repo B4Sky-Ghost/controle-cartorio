@@ -1,0 +1,124 @@
+/* ======================================================
+   INDICADOR DE CONEXÃO
+====================================================== */
+
+.status-conexao {
+
+    position: fixed;
+
+    bottom: 28px;
+
+    left: 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--esp-6);
+
+    padding: var(--esp-6) var(--esp-12);
+
+    border-radius: 20px;
+
+    font-size: .75rem;
+
+    font-weight: 600;
+
+    letter-spacing: .04em;
+
+    z-index: 9999;
+
+    pointer-events: none;
+
+    user-select: none;
+
+    transition:
+
+        background var(--transicao-lenta),
+
+        color var(--transicao-lenta);
+
+}
+
+/* ======================================================
+   STATUS
+====================================================== */
+
+.status-online {
+
+    background: #e8f5e9;
+
+    color: var(--cor-sucesso);
+
+}
+
+.status-offline {
+
+    background: #fce4ec;
+
+    color: var(--cor-erro);
+
+}
+
+/* ======================================================
+   PONTO
+====================================================== */
+
+.status-conexao-ponto {
+
+    width: 8px;
+
+    height: 8px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    transition:
+
+        background var(--transicao-lenta);
+
+}
+
+.ponto-online {
+
+    background: #43a047;
+
+    box-shadow: 0 0 0 2px #a5d6a7;
+
+    animation:
+
+        pulsarOnline 2s infinite;
+
+}
+
+.ponto-offline {
+
+    background: #e53935;
+
+}
+
+/* ======================================================
+   ANIMAÇÃO
+====================================================== */
+
+@keyframes pulsarOnline {
+
+    0%,
+    100% {
+
+        box-shadow:
+
+            0 0 0 2px #a5d6a7;
+
+    }
+
+    50% {
+
+        box-shadow:
+
+            0 0 0 5px #c8e6c9;
+
+    }
+
+}

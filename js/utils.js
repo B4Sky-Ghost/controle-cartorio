@@ -88,45 +88,83 @@ export function parseId(id) {
 }
 
 // ======================================================
+// FORMATA NÚMERO DO DOCUMENTO
+// ======================================================
+
+export function formatarNumeroDocumento(numero) {
+
+    numero = String(numero).replace(/\D/g, "");
+
+    return numero.replace(
+        /\B(?=(\d{3})+(?!\d))/g,
+        "."
+    );
+
+}
+
+// ======================================================
 // ORDENA DOCUMENTOS
 // ======================================================
 
+// Extrai tipo e id numérico puro de um doc,
+// lidando com dois formatos:
+//   Novo:  { tipoId: "Processo", id: "34/2026" }
+//   Antigo: { id: "Processo 34/2026" }  (prefixo embutido)
+function extrairInfo(doc) {
+    if (doc.tipoId) {
+        return { tipo: doc.tipoId.toLowerCase(), rawId: String(doc.id) };
+    }
+
+    const idStr = String(doc.id || "");
+
+    // Formato antigo: "Processo 34/2026"
+    const mProcesso = idStr.match(/^Processo\s+(\d+\/\d{4})$/i);
+    if (mProcesso) {
+        return { tipo: "processo", rawId: mProcesso[1] };
+    }
+
+    // Formato antigo: "Exame de cálculo 4.190"
+    if (/^Exame de cálculo\s+/i.test(idStr)) {
+        return { tipo: "exame", rawId: idStr };
+    }
+
+    // Formato antigo: "Protocolo 6.688" ou só "6.688"
+    const parsed = parseId(idStr);
+    return { tipo: parsed.tipo, rawId: idStr };
+}
+
 export function ordenarDocumentos(lista) {
     lista.sort((a, b) => {
-        const A = parseId(a.id);
-        const B = parseId(b.id);
+        const infoA = extrairInfo(a);
+        const infoB = extrairInfo(b);
+
+        const isProcessoA = infoA.tipo === "processo";
+        const isProcessoB = infoB.tipo === "processo";
 
         // =============================================
         // PROCESSOS SEMPRE PRIMEIRO
         // =============================================
 
-        if (A.tipo === "processo" && B.tipo !== "processo") {
-            return -1;
-        }
-
-        if (A.tipo !== "processo" && B.tipo === "processo") {
-            return 1;
-        }
+        if (isProcessoA !== isProcessoB) return isProcessoA ? -1 : 1;
 
         // =============================================
-        // DOIS PROCESSOS
-        // Ordena por ano e depois por número
+        // DOIS PROCESSOS: ano crescente, depois número crescente
+        // rawId é sempre "numero/ano" neste ponto
         // =============================================
 
-        if (A.tipo === "processo" && B.tipo === "processo") {
-            if (A.ano !== B.ano) {
-                return A.ano - B.ano;
-            }
-
-            return A.numero - B.numero;
+        if (isProcessoA && isProcessoB) {
+            const [numA, anoA] = infoA.rawId.split("/").map(Number);
+            const [numB, anoB] = infoB.rawId.split("/").map(Number);
+            if (anoA !== anoB) return anoA - anoB;
+            return numA - numB;
         }
 
         // =============================================
-        // TODOS OS DEMAIS
-        // (Protocolos + Exames)
-        // Ordena apenas pelo número
+        // PROTOCOLOS + EXAMES: número crescente
         // =============================================
 
-        return A.numero - B.numero;
+        const numA = parseId(infoA.rawId).numero;
+        const numB = parseId(infoB.rawId).numero;
+        return numA - numB;
     });
 }

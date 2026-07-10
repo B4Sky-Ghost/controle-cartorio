@@ -1,0 +1,199 @@
+/* ======================================================
+   ESTATÍSTICAS
+====================================================== */
+
+.stats-bar {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: var(--esp-6);
+
+    margin-bottom: 22px;
+
+    min-height: 52px;
+
+}
+
+/* ======================================================
+   CARD
+====================================================== */
+
+.stat-card {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 72px;
+
+    padding: var(--esp-6) var(--esp-14);
+
+    border-radius: var(--raio-pequeno);
+
+    background: rgba(255, 255, 255, .6);
+
+    border: 1px solid rgba(0, 0, 0, .07);
+
+    transition:
+
+        transform var(--transicao-rapida),
+
+        box-shadow var(--transicao-rapida);
+
+}
+
+.stat-card:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+
+}
+
+/* ======================================================
+   VALOR
+====================================================== */
+
+.stat-valor {
+
+    font-size: 1.25rem;
+
+    font-weight: 700;
+
+    line-height: 1.1;
+
+    white-space: nowrap;
+
+    color: var(--cor-texto);
+
+}
+
+/* ======================================================
+   RÓTULO
+====================================================== */
+
+.stat-rotulo {
+
+    margin-top: 3px;
+
+    max-width: 120px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    text-align: center;
+
+    text-transform: uppercase;
+
+    letter-spacing: .06em;
+
+    font-size: .65rem;
+
+    font-weight: 500;
+
+    color: var(--cor-placeholder);
+
+}
+
+/* ======================================================
+   TOTAL
+====================================================== */
+
+.stat-card--total {
+
+    min-width: 80px;
+
+    background: rgba(38, 50, 56, .08);
+
+    border-color: rgba(38, 50, 56, .15);
+
+}
+
+.stat-card--total .stat-valor {
+
+    font-size: 1.55rem;
+
+    color: var(--cor-sucesso);
+
+}
+
+/* ======================================================
+   DESTAQUE
+====================================================== */
+
+.stat-card--destaque {
+
+    background: rgba(0, 137, 123, .08);
+
+    border-color: rgba(0, 137, 123, .20);
+
+}
+
+.stat-card--destaque .stat-valor {
+
+    color: var(--cor-info-hover);
+
+}
+
+/* ======================================================
+   MAIS RECENTE
+====================================================== */
+
+.stat-card--recente {
+
+    min-width: 0;
+
+    background: rgba(84, 110, 122, .07);
+
+    border-color: rgba(84, 110, 122, .15);
+
+}
+
+.stat-card--recente .stat-valor {
+
+    font-size: .95rem;
+
+    font-weight: 600;
+
+    color: var(--cor-primaria-hover);
+
+}
+
+/* ======================================================
+   DIVISOR
+====================================================== */
+
+.stats-divisor {
+
+    width: 1px;
+
+    height: 36px;
+
+    flex-shrink: 0;
+
+    background: rgba(0, 0, 0, .10);
+
+}
+
+/* ======================================================
+   ESTADO VAZIO
+====================================================== */
+
+.stat-vazio {
+
+    font-size: .85rem;
+
+    color: var(--cor-placeholder);
+
+}

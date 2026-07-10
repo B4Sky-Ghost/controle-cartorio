@@ -1,183 +1,572 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 
 <head>
+
+  <!-- ====================================================== -->
+  <!-- METADADOS -->
+  <!-- ====================================================== -->
+
   <meta charset="UTF-8">
 
-  <title>Controle de Documentos</title>
+  <meta name="author" content="Marcivânio">
 
-  <!-- FONTE -->
+  <meta name="description"
+    content="Sistema de Gerenciamento Documental do Cartório de Registro de Imóveis e Tabelionato 1º de Notas de Paranã">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+    Controle de Documentos
+  </title>
+
+  <!-- ====================================================== -->
+  <!-- GOOGLE FONTS -->
+  <!-- ====================================================== -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+  <!-- ====================================================== -->
   <!-- CSS -->
+  <!-- ====================================================== -->
+
   <link rel="stylesheet" href="styles.css">
+
+  <!-- ====================================================== -->
+  <!-- FAVICON -->
+  <!-- ====================================================== -->
+
+  <link rel="icon" href="./assets/favicon/favicon_capa.ico" type="image/x-icon">
+
 </head>
-
-<div id="modalEditar" class="modal">
-  <div class="modal-conteudo">
-
-    <h2>Editar Documento</h2>
-
-    <label>ID</label>
-    <input id="editId">
-
-    <label>Tipo</label>
-    <select id="editTipo">
-      <option>Abertura de matrícula</option>
-      <option>Averbação</option>
-      <option>Exame de cálculo</option>
-      <option>Escritura</option>
-      <option>Notificação</option>
-      <option>Processo devolvido (Termo de Devolução)</option>
-      <option>Processo para devolver</option>
-      <option>Registro</option>
-      <option>Registro de cédula</option>
-      <option>Retificação Administrativa</option>
-      <option>Restauração de matrícula</option>
-      <option>Outros</option>
-    </select>
-
-    <label>Descrição</label>
-    <input id="editDescricao">
-
-    <label>Local</label>
-    <select id="editLocal">
-      <option>Arquivo</option>
-      <option>Gaveta</option>
-      <option>Adelar</option>
-      <option>Ana</option>
-      <option>Benizania</option>
-      <option>Leonaldo</option>
-      <option>Luzineide</option>
-      <option>Rafaela</option>
-      <option>Rafael</option>
-      <option>Wanderson</option>
-    </select>
-
-    <div class="modal-botoes">
-      <button onclick="fecharModal()">Cancelar</button>
-      <button onclick="salvarEdicao()">Salvar</button>
-    </div>
-
-  </div>
-</div>
 
 <body>
 
-  <!-- LOGO TOPO -->
-  <div class="top-bg"></div>
+  <!-- ====================================================== -->
+  <!-- COMPONENTES GLOBAIS -->
+  <!-- ====================================================== -->
 
-  <!-- CONTAINER -->
-  <div class="container">
+  <!-- =========================
+         MODAL DE EDIÇÃO
+    ========================== -->
 
-    <div class="header">
-      <h1>📁 Controle de Documentos</h1>
-      <p>Sistema interno de gerenciamento documental</p>
-    </div>
+  <div id="modalEditar" class="modal">
 
-    <!-- FORM -->
-    <div class="form-grid">
+    <div class="modal-conteudo">
 
-      <!-- ID -->
-      <input id="id" placeholder="Nº do documento">
+      <h2>
+        Editar Documento
+      </h2>
+
+      <!-- IDENTIFICADOR -->
+
+      <label for="editTipoId">
+        Identificador
+      </label>
+
+      <div class="grupo-id">
+
+        <div class="campo-form">
+
+          <select id="editTipoId">
+
+            <option>Processo</option>
+            <option>Protocolo</option>
+            <option>Exame de cálculo</option>
+
+          </select>
+
+        </div>
+
+        <div class="campo-form">
+
+          <input id="editNumeroId" class="campo" type="text" placeholder="Número">
+
+        </div>
+
+        <div id="editGrupoAno" class="campo-form">
+
+          <input id="editAnoId" class="campo" type="number" placeholder="Ano" min="2000" max="2100">
+
+        </div>
+
+      </div>
 
       <!-- TIPO -->
-      <select id="tipo">
-        <option value="">Selecione o tipo</option>
 
-        <option>Abertura de matrícula</option>
-        <option>Averbação</option>
-        <option>Exame de cálculo</option>
-        <option>Escritura</option>
-        <option>Notificação</option>
-        <option>Processo devolvido (Termo de Devolução)</option>
-        <option>Processo para devolver</option>
-        <option>Registro</option>
-        <option>Registro de cédula</option>
-        <option>Retificação Administrativa</option>
-        <option>Restauração de matrícula</option>
-        <option>Outros</option>
-      </select>
+      <label for="editTipo">
+        Tipo
+      </label>
+
+      <div class="campo-form">
+
+        <select id="editTipo">
+
+          <option>Abertura de matrícula</option>
+          <option>Averbação</option>
+          <option>Exame de cálculo</option>
+          <option>Escritura</option>
+          <option>Notificação</option>
+          <option>Processo devolvido (Termo de Devolução)</option>
+          <option>Processo para devolver</option>
+          <option>Registro</option>
+          <option>Registro de cédula</option>
+          <option>Retificação Administrativa</option>
+          <option>Restauração de matrícula</option>
+          <option>Outros</option>
+
+        </select>
+
+      </div>
 
       <!-- DESCRIÇÃO -->
-      <input id="descricao" placeholder="Descrição">
+
+      <label for="editDescricao">
+        Descrição
+      </label>
+
+      <div class="campo-form">
+
+        <input id="editDescricao" class="campo" type="text">
+
+      </div>
 
       <!-- LOCAL -->
-      <select id="local">
-        <option value="">Localização</option>
 
-        <option>Arquivo</option>
-        <option>Gaveta</option>
-        <option>Adelar</option>
-        <option>Ana</option>
-        <option>Benizania</option>
-        <option>Leonaldo</option>
-        <option>Luzineide</option>
-        <option>Rafaela</option>
-        <option>Rafael</option>
-        <option>Wanderson</option>
-      </select>
+      <label for="editLocal">
+        Local
+      </label>
 
-      <!-- BOTÃO -->
-      <button onclick="registrar()" class="btn-registrar">
-        Registrar
-      </button>
+      <div class="campo-form">
 
-    </div>
+        <select id="editLocal">
 
-    <!-- LISTA -->
-    <div class="lista-header">
-      <h2>📜 Lista</h2>
-    </div>
+          <option>Arquivo</option>
+          <option>Gaveta</option>
+          <option>Adelar</option>
+          <option>Ana</option>
+          <option>Benizania</option>
+          <option>Leonaldo</option>
+          <option>Luzineide</option>
+          <option>Rafaela</option>
+          <option>Rafael</option>
+          <option>Wanderson</option>
 
-    <!-- BUSCA -->
-    <div class="filtros-container">
+        </select>
 
-      <input id="busca" placeholder="🔍 Buscar por ID..." oninput="filtrarLista()">
+      </div>
 
-      <!-- FILTRO TIPO -->
-      <select id="filtroCat" onchange="filtrarLista()">
-        <option value="">Todos os tipos</option>
+      <!-- BOTÕES -->
 
-        <option>Abertura de matrícula</option>
-        <option>Averbação</option>
-        <option>Exame de cálculo</option>
-        <option>Escritura</option>
-        <option>Notificação</option>
-        <option>Processo devolvido (Termo de Devolução)</option>
-        <option>Processo para devolver</option>
-        <option>Registro</option>
-        <option>Registro de cédula</option>
-        <option>Retificação Administrativa</option>
-        <option>Restauração de matrícula</option>
-        <option>Outros</option>
-      </select>
+      <div class="modal-botoes">
 
-      <!-- FILTRO LOCAL -->
-      <select id="filtroLocal" onchange="filtrarLista()">
-        <option value="">Todas localizações</option>
+        <button onclick="fecharModal()">
+          Cancelar
+        </button>
 
-        <option>Arquivo</option>
-        <option>Gaveta</option>
-        <option>Adelar</option>
-        <option>Ana</option>
-        <option>Benizania</option>
-        <option>Leonaldo</option>
-        <option>Luzineide</option>
-        <option>Rafaela</option>
-        <option>Rafael</option>
-        <option>Wanderson</option>
-      </select>
+        <button onclick="salvarEdicao()">
+          Salvar
+        </button>
+
+      </div>
 
     </div>
-
-    <!-- LISTA -->
-    <ul id="lista"></ul>
-
-    <div id="paginacao"></div>
 
   </div>
+
+  <!-- =========================
+         MODAL DE CONFIRMAÇÃO
+    ========================== -->
+
+  <div id="modalConfirmacao" class="modal">
+
+    <div class="modal-conteudo">
+
+      <h2 id="confirmTitulo">
+        Confirmar ação
+      </h2>
+
+      <p id="confirmMensagem">
+        Tem certeza?
+      </p>
+
+      <div class="modal-botoes">
+
+        <button id="btnCancelarConfirmacao">
+          Cancelar
+        </button>
+
+        <button id="btnConfirmarAcao">
+          Confirmar
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- =========================
+         TELA DE CARREGAMENTO
+    ========================== -->
+
+  <div id="loadingScreen" class="loading-screen">
+
+    <div class="loading-corpo">
+
+      <img src="https://i.imgur.com/Bxa7PQL.png" alt="Logo do Cartório" class="loading-logo">
+
+      <div class="loading-docs">
+
+        <div class="loading-linha loading-linha--1"></div>
+        <div class="loading-linha loading-linha--2"></div>
+        <div class="loading-linha loading-linha--3"></div>
+
+      </div>
+
+      <p class="loading-texto">
+        Carregando documentos
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- =========================
+         STATUS DE CONEXÃO
+    ========================== -->
+
+  <div id="statusConexao" class="status-conexao status-offline" title="Verificando conexão...">
+
+    <span class="status-conexao-ponto ponto-offline"></span>
+
+    <span class="status-conexao-texto">
+      Offline
+    </span>
+
+  </div>
+
+  <!-- =========================
+         TOASTS
+    ========================== -->
+
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- ====================================================== -->
+  <!-- CABEÇALHO -->
+  <!-- ====================================================== -->
+
+  <header>
+
+    <div class="top-bg"></div>
+
+  </header>
+
+  <!-- ====================================================== -->
+  <!-- CONTEÚDO PRINCIPAL -->
+  <!-- ====================================================== -->
+
+  <main class="container">
+
+    <!-- ====================================================== -->
+    <!-- CABEÇALHO DO SISTEMA -->
+    <!-- ====================================================== -->
+
+    <section class="header">
+
+      <h1>
+        📁 Controle de Documentos
+      </h1>
+
+      <p>
+        Sistema interno de gerenciamento documental
+      </p>
+
+      <div class="atalhos-hint">
+
+        <span class="atalhos-icone">
+          ⌨
+        </span>
+
+        <ul class="atalhos-lista">
+
+          <li><kbd>Enter</kbd> Registrar</li>
+
+          <li><kbd>Esc</kbd> Fechar modal</li>
+
+          <li><kbd>Ctrl</kbd><kbd>F</kbd> Buscar</li>
+
+          <li><kbd>Ctrl</kbd><kbd>N</kbd> Limpar formulário</li>
+
+          <li><kbd>Ctrl</kbd><kbd>S</kbd> Salvar edição</li>
+
+          <li class="atalhos-separador"></li>
+
+          <li><kbd>Ctrl</kbd><kbd>E</kbd> Exportar backup JSON</li>
+
+          <li><kbd>Ctrl</kbd><kbd>I</kbd> Importar backup JSON</li>
+
+          <li><kbd>Ctrl</kbd><kbd>P</kbd> Exportar lista CSV</li>
+
+        </ul>
+
+      </div>
+
+    </section>
+    <!-- ====================================================== -->
+    <!-- ESTATÍSTICAS -->
+    <!-- ====================================================== -->
+
+    <section class="estatisticas" aria-label="Estatísticas do sistema">
+
+      <div id="statsBar" class="stats-bar"></div>
+
+    </section>
+
+    <!-- ====================================================== -->
+    <!-- CADASTRO DE DOCUMENTOS -->
+    <!-- ====================================================== -->
+
+    <section class="cadastro-section" aria-labelledby="tituloCadastro">
+
+      <h2 id="tituloCadastro">
+        ➕ Cadastrar Documento
+      </h2>
+
+      <form id="formCadastro" onsubmit="return false;">
+
+        <!-- ============================= -->
+        <!-- IDENTIFICADOR -->
+        <!-- ============================= -->
+
+        <fieldset class="form-bloco">
+
+          <legend>Identificador</legend>
+
+          <div class="linha-form">
+
+            <div class="campo-form">
+
+              <select id="tipoId">
+
+                <option value="">Tipo do ID</option>
+
+                <option>Processo</option>
+                <option>Protocolo</option>
+                <option>Exame de cálculo</option>
+
+              </select>
+
+              <small id="erroTipoId" class="erro"></small>
+
+            </div>
+
+            <div class="campo-form">
+
+              <input id="numeroId" type="text" placeholder="Número">
+
+              <small id="erroNumeroId" class="erro"></small>
+
+            </div>
+
+            <div id="grupoAno" class="campo-form">
+
+              <input id="anoId" type="number" placeholder="Ano" min="2000" max="2100">
+
+              <small id="erroAnoId" class="erro"></small>
+
+            </div>
+
+          </div>
+
+        </fieldset>
+
+        <!-- ============================= -->
+        <!-- DOCUMENTO -->
+        <!-- ============================= -->
+
+        <fieldset class="form-bloco">
+
+          <legend>Documento</legend>
+
+          <div class="linha-form">
+
+            <div class="campo-form">
+
+              <select id="tipo">
+
+                <option value="">Tipo do documento</option>
+
+                <option>Abertura de matrícula</option>
+                <option>Averbação</option>
+                <option>Exame de cálculo</option>
+                <option>Escritura</option>
+                <option>Notificação</option>
+                <option>Processo devolvido (Termo de Devolução)</option>
+                <option>Processo para devolver</option>
+                <option>Registro</option>
+                <option>Registro de cédula</option>
+                <option>Retificação Administrativa</option>
+                <option>Restauração de matrícula</option>
+                <option>Outros</option>
+
+              </select>
+
+              <small id="erroTipo" class="erro"></small>
+
+            </div>
+
+            <div class="campo-form">
+
+              <select id="local">
+
+                <option value="">Localização</option>
+
+                <option>Arquivo</option>
+                <option>Gaveta</option>
+                <option>Adelar</option>
+                <option>Ana</option>
+                <option>Benizania</option>
+                <option>Leonaldo</option>
+                <option>Luzineide</option>
+                <option>Rafaela</option>
+                <option>Rafael</option>
+                <option>Wanderson</option>
+
+              </select>
+
+              <small id="erroLocal" class="erro"></small>
+
+            </div>
+
+            <button id="btnRegistrar" class="btn-registrar" onclick="registrar()" disabled>
+
+              Registrar
+
+            </button>
+
+          </div>
+
+        </fieldset>
+
+        <!-- ============================= -->
+        <!-- DESCRIÇÃO -->
+        <!-- ============================= -->
+
+        <fieldset class="form-bloco">
+
+          <legend>Descrição</legend>
+
+          <div class="campo-form">
+
+            <input id="descricao" type="text" placeholder="Descrição do documento">
+
+            <small id="erroDescricao" class="erro"></small>
+
+          </div>
+
+        </fieldset>
+
+      </form>
+
+    </section>
+    <!-- ====================================================== -->
+    <!-- LISTA DE DOCUMENTOS -->
+    <!-- ====================================================== -->
+
+    <section class="lista-section" aria-labelledby="tituloLista">
+
+      <!-- ============================================= -->
+      <!-- CABEÇALHO -->
+      <!-- ============================================= -->
+
+      <header class="lista-header">
+
+        <h2 id="tituloLista">
+          📜 Lista de Documentos
+        </h2>
+
+      </header>
+
+      <!-- ============================================= -->
+      <!-- FILTROS -->
+      <!-- ============================================= -->
+
+      <div class="filtros-container">
+
+        <!-- Busca -->
+
+        <input id="busca" type="text" placeholder="🔍 Buscar por ID..." oninput="filtrarLista()">
+
+        <!-- Tipo -->
+
+        <select id="filtroCat" onchange="filtrarLista()">
+
+          <option value="">
+            Todos os tipos
+          </option>
+
+          <option>Abertura de matrícula</option>
+          <option>Averbação</option>
+          <option>Exame de cálculo</option>
+          <option>Escritura</option>
+          <option>Notificação</option>
+          <option>Processo devolvido (Termo de Devolução)</option>
+          <option>Processo para devolver</option>
+          <option>Registro</option>
+          <option>Registro de cédula</option>
+          <option>Retificação Administrativa</option>
+          <option>Restauração de matrícula</option>
+          <option>Outros</option>
+
+        </select>
+
+        <!-- Local -->
+
+        <select id="filtroLocal" onchange="filtrarLista()">
+
+          <option value="">
+            Todas as localizações
+          </option>
+
+          <option>Arquivo</option>
+          <option>Gaveta</option>
+          <option>Adelar</option>
+          <option>Ana</option>
+          <option>Benizania</option>
+          <option>Leonaldo</option>
+          <option>Luzineide</option>
+          <option>Rafaela</option>
+          <option>Rafael</option>
+          <option>Wanderson</option>
+
+        </select>
+
+      </div>
+
+      <!-- ============================================= -->
+      <!-- DOCUMENTOS -->
+      <!-- ============================================= -->
+
+      <ul id="lista"></ul>
+
+      <!-- ============================================= -->
+      <!-- PAGINAÇÃO -->
+      <!-- ============================================= -->
+
+      <nav id="paginacao" aria-label="Paginação dos documentos"></nav>
+
+    </section>
+  </main>
+
+  <!-- ====================================================== -->
+  <!-- SCRIPTS -->
+  <!-- ====================================================== -->
 
   <script type="module" src="./js/main.js"></script>
 

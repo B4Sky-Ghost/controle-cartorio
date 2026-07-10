@@ -38,3 +38,6 @@ export const db = getDatabase(app);
 // Referência principal
 
 export const documentosRef = ref(db, "documentos");
+
+// Contador sequencial — armazena o próximo número disponível
+export const metaRef = ref(db, "_meta/proximoId");

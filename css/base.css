@@ -1,0 +1,148 @@
+/* ======================================================
+   BASE
+====================================================== */
+
+/* ======================================================
+   RESET
+====================================================== */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+/* ======================================================
+   BODY
+====================================================== */
+
+body {
+
+    font-family: var(--fonte-principal);
+
+    background:
+        linear-gradient(135deg,
+            var(--cor-fundo),
+            var(--cor-fundo-secundario));
+
+    color: var(--cor-texto);
+
+}
+
+/* ======================================================
+   TÍTULOS
+====================================================== */
+
+h2 {
+
+    font-size: var(--fonte-30);
+
+    font-weight: 700;
+
+    margin-bottom: var(--esp-20);
+
+}
+
+/* ======================================================
+   CAMPOS
+====================================================== */
+
+input,
+select {
+
+    width: auto;
+
+    padding: var(--esp-10) var(--esp-12);
+
+    font-size: var(--fonte-14);
+
+    font-family: inherit;
+
+    color: var(--cor-texto);
+
+    background: rgba(255, 255, 255, .85);
+
+    border: 1px solid var(--cor-borda);
+
+    border-radius: var(--raio-pequeno);
+
+    transition:
+
+        border-color var(--transicao),
+
+        box-shadow var(--transicao),
+
+        background var(--transicao);
+
+}
+
+input::placeholder {
+
+    color: var(--cor-placeholder);
+
+}
+
+input:focus,
+select:focus {
+
+    outline: none;
+
+    border-color: var(--cor-borda-hover);
+
+    box-shadow: var(--sombra-input);
+
+}
+
+/* ======================================================
+   BOTÕES
+====================================================== */
+
+button {
+
+    padding: var(--esp-10) var(--esp-16);
+
+    border: none;
+
+    border-radius: var(--raio-pequeno);
+
+    font-size: var(--fonte-14);
+
+    font-weight: 600;
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transition:
+
+        transform var(--transicao-rapida),
+
+        background var(--transicao),
+
+        opacity var(--transicao);
+
+}
+
+button:hover {
+
+    transform: translateY(-1px);
+
+}
+
+button:active {
+
+    transform: translateY(0);
+
+}
+
+button:disabled {
+
+    opacity: .6;
+
+    cursor: not-allowed;
+
+}

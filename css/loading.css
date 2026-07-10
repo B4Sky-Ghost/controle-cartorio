@@ -1,0 +1,200 @@
+/* ======================================================
+   TELA DE CARREGAMENTO
+====================================================== */
+
+.loading-screen {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 10000;
+
+    opacity: 1;
+
+    background:
+        linear-gradient(135deg,
+            var(--cor-fundo),
+            var(--cor-fundo-secundario));
+
+    transition:
+        opacity .5s ease,
+        transform .5s ease;
+
+}
+
+.loading-screen.loading--saindo {
+
+    opacity: 0;
+
+    transform: translateY(-12px);
+
+    pointer-events: none;
+
+}
+
+/* ======================================================
+   CONTEÚDO
+====================================================== */
+
+.loading-corpo {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 28px;
+
+}
+
+/* ======================================================
+   LOGO
+====================================================== */
+
+.loading-logo {
+
+    width: 180px;
+
+    opacity: 0;
+
+    animation:
+        logoEntrar .6s ease .1s forwards;
+
+}
+
+@keyframes logoEntrar {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(10px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+/* ======================================================
+   DOCUMENTO ANIMADO
+====================================================== */
+
+.loading-docs {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--esp-10);
+
+    width: 200px;
+
+    opacity: 0;
+
+    animation:
+        logoEntrar .5s ease .4s forwards;
+
+}
+
+.loading-linha {
+
+    height: 6px;
+
+    border-radius: 4px;
+
+    background:
+
+        linear-gradient(90deg,
+
+            #b0bec5 0%,
+
+            var(--cor-texto-claro) 50%,
+
+            #b0bec5 100%);
+
+    background-size: 200% 100%;
+
+    animation:
+
+        varrer 1.6s ease-in-out infinite;
+
+}
+
+.loading-linha--1 {
+
+    width: 100%;
+
+    animation-delay: 0s;
+
+}
+
+.loading-linha--2 {
+
+    width: 75%;
+
+    animation-delay: .2s;
+
+}
+
+.loading-linha--3 {
+
+    width: 55%;
+
+    animation-delay: .4s;
+
+}
+
+@keyframes varrer {
+
+    0% {
+
+        background-position: 200% 0;
+
+    }
+
+    100% {
+
+        background-position: -200% 0;
+
+    }
+
+}
+
+/* ======================================================
+   TEXTO
+====================================================== */
+
+.loading-texto {
+
+    opacity: 0;
+
+    color: var(--cor-placeholder);
+
+    font-size: .8rem;
+
+    font-weight: 500;
+
+    letter-spacing: .12em;
+
+    text-transform: uppercase;
+
+    animation:
+
+        logoEntrar .5s ease .6s forwards;
+
+}

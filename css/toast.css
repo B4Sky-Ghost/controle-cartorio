@@ -1,0 +1,135 @@
+/* ======================================================
+   TOASTS
+====================================================== */
+
+.toast-container {
+
+    position: fixed;
+
+    right: 28px;
+
+    bottom: 28px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--esp-10);
+
+    z-index: 9999;
+
+    pointer-events: none;
+
+}
+
+/* ======================================================
+   TOAST
+====================================================== */
+
+.toast {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: var(--esp-8);
+
+    max-width: 340px;
+
+    padding: 11px 18px;
+
+    border-radius: 8px;
+
+    font-size: .92rem;
+
+    font-weight: 500;
+
+    color: #fff;
+
+    word-break: break-word;
+
+    opacity: 0;
+
+    transform: translateY(12px);
+
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .18);
+
+    transition:
+
+        opacity .22s ease,
+
+        transform .22s ease;
+
+}
+
+.toast--visivel {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+/* ======================================================
+   VARIAÇÕES
+====================================================== */
+
+.toast--sucesso {
+
+    background: var(--cor-sucesso-hover);
+
+}
+
+.toast--erro {
+
+    background: var(--cor-erro-hover);
+
+}
+
+.toast--info {
+
+    background: var(--cor-primaria-hover);
+
+}
+
+/* ======================================================
+   ÍCONE
+====================================================== */
+
+.toast-icone {
+
+    flex-shrink: 0;
+
+    font-size: 1rem;
+
+}
+
+/* ======================================================
+   BADGE DO DOCUMENTO
+====================================================== */
+
+.doc-seq {
+
+    display: inline-block;
+
+    margin-right: var(--esp-8);
+
+    padding: 1px 6px;
+
+    border-radius: 4px;
+
+    background: var(--cor-texto-claro);
+
+    color: var(--cor-placeholder);
+
+    font-size: .72rem;
+
+    font-weight: 600;
+
+    letter-spacing: .03em;
+
+    vertical-align: middle;
+
+    user-select: none;
+
+}

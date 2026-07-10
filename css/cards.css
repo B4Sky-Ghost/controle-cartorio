@@ -1,0 +1,239 @@
+/* ======================================================
+   LISTA
+====================================================== */
+
+#lista {
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+/* ======================================================
+   CARD DO DOCUMENTO
+====================================================== */
+
+#lista li {
+
+    list-style: none;
+
+    margin-bottom: var(--esp-12);
+
+    padding: 15px;
+
+    background: var(--cor-card-hover);
+
+    border: 1px solid rgba(0, 0, 0, .05);
+
+    border-radius: var(--raio-medio);
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .04);
+
+    transition:
+
+        transform var(--transicao),
+
+        box-shadow var(--transicao);
+
+}
+
+#lista li:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: var(--sombra-card-hover);
+
+}
+
+/* ======================================================
+   TOPO DO CARD
+====================================================== */
+
+.doc-topo {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 18px;
+
+}
+
+/* ======================================================
+   TEXTO
+====================================================== */
+
+.doc-info {
+
+    flex: 1;
+
+    min-width: 320px;
+
+    color: var(--cor-texto-secundario);
+
+    line-height: 1.55;
+
+    word-break: break-word;
+
+}
+
+/* ======================================================
+   BOTÕES DO CARD
+====================================================== */
+
+.doc-botoes {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: var(--esp-10);
+
+}
+
+.doc-botoes button {
+
+    margin: 0;
+
+    min-width: 100px;
+
+}
+
+/* ==========================================
+   EDITAR
+========================================== */
+
+.btn-editar {
+
+    background: var(--cor-secundaria);
+
+    color: #fff;
+
+}
+
+.btn-editar:hover {
+
+    background: var(--cor-secundaria-hover);
+
+}
+
+/* ==========================================
+   EXCLUIR
+========================================== */
+
+.btn-excluir {
+
+    background: var(--cor-erro);
+
+    color: #fff;
+
+}
+
+.btn-excluir:hover {
+
+    background: var(--cor-erro-hover);
+
+}
+
+/* ==========================================
+   HISTÓRICO
+========================================== */
+
+.btn-historico {
+
+    background: var(--cor-info);
+
+    color: #fff;
+
+}
+
+.btn-historico:hover {
+
+    background: var(--cor-info-hover);
+
+}
+
+/* ======================================================
+   HISTÓRICO
+====================================================== */
+
+.historico {
+
+    margin-top: 18px;
+
+    padding-top: 14px;
+
+    border-top: 1px solid rgba(0, 0, 0, .08);
+
+    color: var(--cor-texto-secundario);
+
+    font-size: var(--fonte-14);
+
+    line-height: 1.8;
+
+}
+
+/* ======================================================
+   PAGINAÇÃO
+====================================================== */
+
+#paginacao {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: var(--esp-10);
+
+    margin-top: var(--esp-35);
+
+}
+
+#paginacao button {
+
+    min-width: 44px;
+
+    height: 44px;
+
+    padding: 0 var(--esp-14);
+
+    border: none;
+
+    border-radius: var(--raio-pequeno);
+
+    background: rgba(255, 255, 255, .8);
+
+    color: var(--cor-texto-secundario);
+
+    font-weight: 600;
+
+    transition:
+
+        background var(--transicao),
+
+        transform var(--transicao-rapida);
+
+}
+
+#paginacao button:hover {
+
+    transform: translateY(-2px);
+
+}
+
+.pagina-ativa {
+
+    background: var(--cor-primaria) !important;
+
+    color: #fff;
+
+}

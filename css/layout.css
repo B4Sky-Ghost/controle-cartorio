@@ -1,0 +1,215 @@
+/* ======================================================
+   TOPO
+====================================================== */
+
+.top-bg {
+
+    width: 100%;
+    height: 480px;
+
+    margin-top: var(--esp-20);
+
+    background-image: url("https://i.imgur.com/Bxa7PQL.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+}
+
+/* ======================================================
+   CONTAINER
+====================================================== */
+
+.container {
+
+    max-width: 1800px;
+
+    margin: var(--esp-20) auto;
+
+    padding: var(--esp-35);
+
+    border-radius: var(--raio-grande);
+
+    background: var(--cor-card);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow: var(--sombra-card);
+
+}
+
+/* ======================================================
+   FORMULÁRIO
+====================================================== */
+
+#formCadastro {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 26px;
+
+    margin-top: var(--esp-30);
+
+}
+
+/* ======================================================
+   BLOCOS DO FORMULÁRIO
+====================================================== */
+
+.form-bloco {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--esp-14);
+
+    border: none;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+.form-bloco legend {
+
+    margin-bottom: 2px;
+
+    padding: 0;
+
+    font-size: var(--fonte-14);
+
+    font-weight: 700;
+
+    color: var(--cor-secundaria);
+
+}
+
+/* ======================================================
+   LINHAS DO FORMULÁRIO
+====================================================== */
+
+.linha-form {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: flex-start;
+
+    gap: var(--esp-16);
+
+}
+
+/* ======================================================
+   CAMPOS
+====================================================== */
+
+.campo-form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: var(--esp-4);
+
+}
+
+/* ======================================================
+   IDENTIFICADOR
+====================================================== */
+
+#tipoId {
+
+    width: 190px;
+
+}
+
+#numeroId {
+
+    width: 170px;
+
+}
+
+#grupoAno {
+
+    width: 120px;
+
+}
+
+/* ======================================================
+   DOCUMENTO
+====================================================== */
+
+#tipo {
+
+    width: 340px;
+
+}
+
+#local {
+
+    width: 190px;
+
+}
+
+.btn-registrar {
+
+    height: 44px;
+
+    padding-inline: 28px;
+
+    margin-top: 1px;
+
+    align-self: flex-start;
+
+}
+
+/* ======================================================
+   DESCRIÇÃO
+====================================================== */
+
+#descricao {
+
+    width: 100%;
+
+}
+
+/* ======================================================
+   FILTROS
+====================================================== */
+
+.filtros-container {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: var(--esp-12);
+
+    margin-bottom: 28px;
+
+}
+
+#busca {
+
+    width: 280px;
+
+}
+
+#filtroCat {
+
+    width: 240px;
+
+}
+
+#filtroLocal {
+
+    width: 220px;
+
+}
