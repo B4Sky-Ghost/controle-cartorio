@@ -61,7 +61,7 @@ export function iniciarAtalhos() {
         }
 
         // ── Ctrl + N → limpar formulário ───────────────
-        if (ctrl && e.key === "n") {
+        if (ctrl && e.altKey && e.key.toLowerCase() === "n") {
             e.preventDefault();
             if (!modalEdicaoAberta()) {
                 limparFormulario();
