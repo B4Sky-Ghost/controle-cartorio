@@ -2,8 +2,8 @@
 // IMPORTS
 // ======================================================
 
-import { dom } from "./dom.js";
-import { state } from "./state.js";
+import { dom } from "../modules/documentos/dom.js";
+import { state } from "../modules/documentos/state.js";
 
 // ======================================================
 // PAGINAÇÃO

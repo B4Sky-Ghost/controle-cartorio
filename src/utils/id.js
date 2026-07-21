@@ -2,7 +2,7 @@
 // IDENTIFICADORES
 // ======================================================
 
-import { dom } from "./dom.js";
+import { dom } from "../modules/documentos/dom.js";
 
 // ======================================================
 // CADASTRO

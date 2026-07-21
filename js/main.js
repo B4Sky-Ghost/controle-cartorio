@@ -3,32 +3,32 @@
 // ======================================================
 
 import { documentosRef } from "./firebase.js";
-import { state } from "./state.js";
+import { state } from "../src/modules/documentos/state.js";
 import { migrarDocumentos, migrarChaves } from "./migrar.js";
 import { iniciarMonitorConexao } from "./conexao.js";
-import { esconderLoading } from "./loading.js";
+import { esconderLoading } from "../src/shared/loading.js";
 import { iniciarAtalhos } from "./atalhos.js";
-import { atualizarStats } from "./stats.js";
+import { atualizarStats } from "../src/modules/documentos/stats.js";
 
-import { registrar } from "./cadastro.js";
-import { filtrarLista } from "./filtro.js";
+import { registrar } from "../src/modules/documentos/cadastro.js";
+import { filtrarLista } from "../src/modules/documentos/filtro.js";
 
 import {
   abrirModal,
   fecharModal,
   salvarEdicao
-} from "./editar.js";
+} from "../src/modules/documentos/editar.js";
 
 import {
   onValue
 } from "https://www.gstatic.com/firebasejs/12.12.1/firebase-database.js";
 
-import { dom } from "./dom.js"
+import { dom } from "../src/modules/documentos/dom.js";
 
 import {
   atualizarCamposID,
   atualizarCamposEdicaoID
-} from "./id.js";
+} from "../src/utils/id.js";
 
 import {
   validarTipoId,
@@ -38,7 +38,7 @@ import {
   validarDescricao,
   validarLocal,
   atualizarBotao,
-} from "./validacao.js";
+} from "../src/utils/validacao.js";
 
 dom.editTipoId.addEventListener(
   "change",

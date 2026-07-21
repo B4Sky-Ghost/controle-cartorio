@@ -4,21 +4,16 @@
 
 import { dom } from "./dom.js";
 import { state } from "./state.js";
-import { db } from "./firebase.js";
+import { excluirDocumento } from "../../services/documentoService.js";
 
-import {
-  ref,
-  remove,
-} from "https://www.gstatic.com/firebasejs/12.12.1/firebase-database.js";
+import { preencherHistorico, alternarHistorico } from "../../utils/historico.js";
 
-import { preencherHistorico, alternarHistorico } from "./historico.js";
+import { ordenarDocumentos } from "../../utils/utils.js";
 
-import { ordenarDocumentos } from "./utils.js";
+import { renderPaginacao } from "../../shared/paginacao.js";
 
-import { renderPaginacao } from "./paginacao.js";
-
-import { abrirConfirmacao } from "./confirm.js";
-import { mostrarToast } from "./toast.js";
+import { abrirConfirmacao } from "../../shared/confirm.js";
+import { mostrarToast } from "../../shared/toast.js";
 
 // ======================================================
 // RENDERIZAÇÃO DA LISTA
@@ -123,9 +118,9 @@ function configurarBotoes(li, doc) {
 
       mensagem: `Tem certeza que deseja excluir o documento "${prefixoExcluir}${doc.id}"?`,
 
-      confirmar: () => {
+      confirmar: async () => {
 
-        remove(ref(db, "documentos/" + doc.key));
+        await excluirDocumento(doc.key);
         mostrarToast("Documento excluído.", "info");
 
       }

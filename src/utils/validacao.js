@@ -2,7 +2,7 @@
 // IMPORTS
 // ======================================================
 
-import { dom } from "./dom.js";
+import { dom } from "../modules/documentos/dom.js";
 
 // ======================================================
 // HELPERS: mostrar / limpar erro num campo

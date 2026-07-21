@@ -2,11 +2,11 @@
 // ATALHOS DE TECLADO
 // ======================================================
 
-import { dom } from "./dom.js";
-import { registrar, limparFormulario } from "./cadastro.js";
-import { fecharModal, salvarEdicao } from "./editar.js";
-import { atualizarBotao } from "./validacao.js";
-import { atualizarCamposID } from "./id.js";
+import { dom } from "../src/modules/documentos/dom.js";
+import { registrar, limparFormulario } from "../src/modules/documentos/cadastro.js";
+import { fecharModal, salvarEdicao } from "../src/modules/documentos/editar.js";
+import { atualizarBotao } from "../src/utils/validacao.js";
+import { atualizarCamposID } from "../src/utils/id.js";
 import { exportarJSON, exportarCSV } from "./exportar.js";
 import { importarJSON } from "./importar.js";
 

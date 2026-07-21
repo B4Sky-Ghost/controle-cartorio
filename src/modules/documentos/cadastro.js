@@ -2,20 +2,14 @@
 // CADASTRO DE DOCUMENTOS
 // ======================================================
 
-import {
-    ref,
-    set,
-    runTransaction,
-} from "https://www.gstatic.com/firebasejs/12.12.1/firebase-database.js";
-
-import { db, metaRef } from "./firebase.js";
+import { criarDocumentoService } from "../../services/documentoService.js";
 
 import { dom } from "./dom.js";
 
-import { atualizarCamposID } from "./id.js";
-import { formatarNumeroDocumento } from "./utils.js";
-import { validarFormulario, atualizarBotao } from "./validacao.js";
-import { mostrarToast } from "./toast.js";
+import { atualizarCamposID } from "../../utils/id.js";
+import { formatarNumeroDocumento } from "../../utils/utils.js";
+import { validarFormulario, atualizarBotao } from "../../utils/validacao.js";
+import { mostrarToast } from "../../shared/toast.js";
 
 // ======================================================
 // MONTA O ID DO DOCUMENTO
@@ -87,31 +81,18 @@ export async function registrar() {
 
     if (!id || !tipo || !descricao || !local) return;
 
-    const agora = new Date().toISOString();
+    await criarDocumentoService({
 
-    // Lê o valor atual e incrementa numa única transação atômica.
-    // O doc é salvo na chave ANTES do incremento.
-    const resultado = await runTransaction(metaRef, (atual) => {
-        return (atual || 1) + 1;
-    });
-
-    // snapshot.val() é o valor NOVO (após +1), então a chave usada é val - 1
-    const novaChave = String(resultado.snapshot.val() - 1);
-
-    await set(ref(db, "documentos/" + novaChave), {
         id,
+
         tipoId: dom.tipoId.value,
+
         tipo,
+
         descricao,
+
         local,
-        horario: agora,
-        historico: [
-            {
-                acao: "Criado",
-                local,
-                data: agora,
-            },
-        ],
+
     });
 
     limparFormulario();
